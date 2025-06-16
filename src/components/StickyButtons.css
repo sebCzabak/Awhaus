@@ -1,0 +1,89 @@
+/* src/components/StickyButtons.css */
+.sticky-buttons-container {
+  position: fixed; /* Przyklejamy do ekranu */
+  bottom: 20px; /* 20px od dołu */
+  right: 20px; /* 20px od prawej */
+  display: flex;
+  flex-direction: column; /* Ułóż guziki jeden pod drugim */
+  gap: 15px; /* Odstęp między guzikami */
+  z-index: 9999; /* Upewnij się, że są nad innymi elementami (ale pod modalem) */
+}
+
+.sticky-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px; /* Okrągłe guziki */
+  height: 55px;
+  border-radius: 50%; /* Okrągły kształt */
+  background-color: #00bcd4; /* Kolor dewelopera */
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.sticky-button:hover {
+  background-color: #0097a7; /* Ciemniejszy odcień na hover */
+  transform: translateY(-3px); /* Lekkie uniesienie */
+}
+
+.phone-modal-content {
+  text-align: center;
+  padding: 20px;
+}
+
+.phone-modal-content h3 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.phone-modal-content p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.phone-number-link {
+  display: inline-flex; /* Aby ikona była obok tekstu */
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00bcd4;
+  text-decoration: none;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  border: 2px solid #00bcd4;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.phone-number-link:hover {
+  background-color: #00bcd4;
+  color: white;
+}
+
+/* Media Queries dla responsywności */
+@media (max-width: 768px) {
+  .sticky-buttons-container {
+    bottom: 15px;
+    right: 15px;
+    gap: 10px;
+  }
+  .sticky-button {
+    width: 50px;
+    height: 50px;
+  }
+  .sticky-button svg { /* Ikony wewnątrz guzików */
+    font-size: 20px; /* Zmniejsz rozmiar ikon */
+  }
+  .phone-modal-content h3 {
+    font-size: 1.5rem;
+  }
+  .phone-number-link {
+    font-size: 1.3rem;
+  }
+}

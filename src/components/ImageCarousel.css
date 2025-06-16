@@ -1,0 +1,182 @@
+.image-carousel-section { 
+  padding: 60px 20px;
+  background-color: #f8f8f8;
+  text-align: center;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+}
+
+.image-carousel-title { 
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.mySwiper {
+  width: 100%;
+  height:50vh;
+  padding-bottom: 50px; 
+  max-width: 1000px;
+  margin:0 auto;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.swiper-slide {
+  transition:opacity 0.3s ease-in-out, transform 0.3s ease-in-out,filter 0.3s ease-in-out;
+  filter: blur(0px);
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.mySwiper .swiper-slide:not(.swiper-slide-active){
+  filter: blur(5px);
+  opacity: 0.7;
+  transform: scale(0.9);
+}
+.mySwiper .swiper-slide.swiper-slide-active {
+  filter: blur(0px) !important;
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+.carousel-item { 
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 0;
+  background-color: #f8f8f8;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-thumbnail { 
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0 ;
+}
+
+.carousel-item-description { 
+  position: relative; /* Nakładka na obraz */
+  background-color: rgba(0, 0, 0, 0.6); /* Ciemne tło dla czytelności */
+  color: white;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  z-index: 5;
+}
+
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #00bcd4 !important;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 20px; 
+  margin-right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after{
+  font-size: 1.5rem;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #00bcd4 !important; 
+}
+
+
+.modal-carousel-container {
+    width: 90vw; 
+    max-width: 1200px; 
+    height: 85vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myModalSwiper {
+    width: 100%;
+    height: 100%;
+}
+
+.modal-image-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box; 
+}
+
+.modal-full-image {
+  max-width: 100%; 
+  max-height: 80%; 
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.modal-image-description {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+
+.modal-navigation {
+    display: none;
+}
+
+
+
+@media (max-width: 768px) {
+  .image-carousel-section {
+    padding: 40px 15px;
+  }
+  .image-carousel-title {
+    font-size: 2rem;
+  }
+
+  .carousel-thumbnail {
+    height: 180px;
+  }
+  .modal-full-image {
+    max-height: 70%;
+  }
+  .mySwiper {
+      height: 40vh; /* Dostosuj wysokość karuzeli na mobilnych */
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+  .carousel-thumbnail {
+      height: 200px; /
+  }
+}
+

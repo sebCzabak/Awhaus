@@ -1,0 +1,82 @@
+.about-section {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: white;
+  gap: 40px; 
+}
+
+.about-content {
+  flex: 1; 
+  min-width: 300px; 
+  max-width: 600px; 
+  text-align: left;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center; 
+}
+
+.about-description {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.about-points {
+  list-style: none; 
+  padding: 0;
+  margin-top: 20px;
+}
+
+.about-points li {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.about-points li::before {
+  content: '✓'; 
+  color: #00bcd4; 
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.about-image-wrapper {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px; 
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 40px 15px;
+  }
+  .about-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  .about-description {
+    font-size: 1rem;
+  }
+  .about-content,
+  .about-image-wrapper {
+    max-width: 100%; 
+  }
+}
